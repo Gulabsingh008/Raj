@@ -15,38 +15,38 @@ def is_enabled(value, default):
         return default
 
 #main variables
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5397984467').split()]
-USERNAME = environ.get('USERNAME', "https://telegram.me/biisal")
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001949498981'))
-MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/+4RB2-U2o9yE4ZmQ9')
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001856885647 -1001818726355').split()]
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_URI2 = environ.get('DATABASE_URI2', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "USER-INFO")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'FILES-INFO')
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1001949498981'))
+API_ID = int(environ.get('API_ID', '14680661'))
+API_HASH = environ.get('API_HASH', '166f6e394021081c5cdb41c92344deb7')
+BOT_TOKEN = environ.get('BOT_TOKEN', '6300889162:AAE5EEY-Y615OLjKoLjoH8B1mVbG9kRweLQ')
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1393092521 6300461900').split()]
+USERNAME = environ.get('USERNAME', "https://telegram.me/Your_Raj")
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001651812610'))
+MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/SB_Movie_Group')
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001917260095').split()]
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://raj94626:imdbbot987@cluster0.yvuseog.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://raj94626:sona@cluster0.knynp3p.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'cluster0')
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1001963473990'))
 QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/ccb9db43e62a2e524928e.jpg')
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/4dad0cc16f190468454ee.jpg')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1001949498981'))
-URL = environ.get('URL', 'illegal-testbot-308325bcba17.herokuapp.com')
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1001764238165'))
+URL = environ.get('URL', SB_File_to_link_Bot')
 OMNI = 'omnifly.in.net'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
 # verify system vars
 IS_VERIFY = is_enabled('IS_VERIFY', True)
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1001949498981'))
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002023751348'))
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/Movie_Url_link_downloader/17")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
-SHORTENER_API = environ.get("SHORTENER_API", "5bb6e402dd86fb8774690a5f4a65d2a2c0c04877")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", OMNI)
-SHORTENER_API2 = environ.get("SHORTENER_API2", "41a89e7a1f16e7dbec0ee52d743f3b5a38a09613")
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", OMNI)
-SHORTENER_API3 = environ.get("SHORTENER_API3", "f287e7e9b1a23c34f542f77787d39607cae36a4d")
-SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", OMNI)
+SHORTENER_API = environ.get("SHORTENER_API", "9d714f16fc0263df58858c2cc5b487598ba01b1b")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", ziplinker.net)
+SHORTENER_API2 = environ.get("SHORTENER_API2", "9d714f16fc0263df58858c2cc5b487598ba01b1b")
+SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", ziplinker.net)
+SHORTENER_API3 = environ.get("SHORTENER_API3", "f637b5b742a80e3f75f96a582feeee076e9e2a39")
+SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", onepagelink.in)
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
 
@@ -57,21 +57,21 @@ YEARS = [f'{i}' for i in range(2024 , 2002,-1 )]
 SEASONS = [f'season {i}'for i in range (1 , 23)]
 REF_PREMIUM = 30
 PREMIUM_POINT = 1500
-auth_channel = environ.get('AUTH_CHANNEL', '-1001949498981')
+auth_channel = environ.get('AUTH_CHANNEL', '')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1001812797837'))
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1001625752177'))
 
 # hastags request features
-request_channel = environ.get('REQUEST_CHANNEL', '-1001949498981')
+request_channel = environ.get('REQUEST_CHANNEL', '-1001838363129')
 REQUEST_CHANNEL = int(request_channel) if request_channel and id_pattern.search(request_channel) else None
-UPI_PAY_LOGS = int(environ.get('UPI_PAY_LOGS', '-1001949498981'))
+UPI_PAY_LOGS = int(environ.get('UPI_PAY_LOGS', '-1002023751348'))
 # bot settings
-IS_PM_SEARCH = is_enabled('IS_PM_SEARCH', True)
+IS_PM_SEARCH = is_enabled('IS_PM_SEARCH', False)
 AUTO_FILTER = is_enabled('AUTO_FILTER', True)
 PORT = os.environ.get('PORT', '8080')
 MAX_BTN = int(environ.get('MAX_BTN', '8'))
 AUTO_DELETE = is_enabled('AUTO_DELETE', True)
-DELETE_TIME = int(environ.get('DELETE_TIME', 1200))
+DELETE_TIME = int(environ.get('DELETE_TIME', 300))
 IMDB = is_enabled('IMDB', False)
 FILE_CAPTION = environ.get('FILE_CAPTION', f'{script.FILE_CAPTION}')
 IMDB_TEMPLATE = environ.get('IMDB_TEMPLATE', f'{script.IMDB_TEMPLATE_TXT}')
