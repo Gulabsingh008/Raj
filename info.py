@@ -32,7 +32,7 @@ QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/ccb9db43e62a2e524928e.j
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/4dad0cc16f190468454ee.jpg')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1001764238165'))
-URL = environ.get('URL', SB_File_to_link_Bot')
+URL = environ.get('URL', 'file-to-link-ads-aba9788b40e6.herokuapp.com')
 OMNI = 'omnifly.in.net'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
