@@ -1264,20 +1264,20 @@ async def auto_filter(client, msg, spoll=False):
                 ])
         else:
             btn.insert(0,[
-        InlineKeyboardButton("🎭 ᴄʜᴏᴏsᴇ ʟᴀɴɢᴜᴀɢᴇ ✨", callback_data=f"languages#{key}#{offset}#{req}"),
+        InlineKeyboardButton("🔰 ᴄʜᴏᴏsᴇ ʟᴀɴɢᴜᴀɢᴇ 🔰", callback_data=f"languages#{key}#{offset}#{req}"),
         ])
             btn.insert(1, [
-                InlineKeyboardButton("✨ ǫᴜᴀʟɪᴛʏ 🤡", callback_data=f"qualities#{key}#{offset}#{req}"),
-                InlineKeyboardButton("🚩 ʏᴇᴀʀ ⌛", callback_data=f"years#{key}#{offset}#{req}"),
+                InlineKeyboardButton("◖ ǫᴜᴀʟɪᴛʏ ◗", callback_data=f"qualities#{key}#{offset}#{req}"),
+                InlineKeyboardButton("◖ ʏᴇᴀʀ ◗", callback_data=f"years#{key}#{offset}#{req}"),
             ])
             btn.insert(2, [
-                InlineKeyboardButton("✨ ᴄʜᴏᴏsᴇ season🍿", callback_data=f"seasons#{key}#{offset}#{req}")
+                InlineKeyboardButton("◖ ᴄʜᴏᴏsᴇ sᴇᴀsᴏɴ ◗", callback_data=f"seasons#{key}#{offset}#{req}")
             ])
     else:
         #fix this later
         if total_results >= 3:
             btn.insert(0,[
-                InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", callback_data=batch_link),
+                InlineKeyboardButton("♨️ sᴇɴᴅ ᴀʟʟ ♨️", callback_data=batch_link),
                 InlineKeyboardButton("🎗️ ᴘʀᴇᴍɪᴜᴍ 🎗️", callback_data="premium")
             ])
         else:
