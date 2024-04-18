@@ -804,11 +804,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ 🎉', callback_data='premium'),
         ],
         [
-            InlineKeyboardButton('◖ ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ ◗', callback_data=f'free_premium#{query.from_user.id}')
+            InlineKeyboardButton('• ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ •', callback_data=f'free_premium#{query.from_user.id}')
         ],
         [
-            InlineKeyboardButton('◖ ʏᴏᴜʀ ᴘᴏɪɴᴛs ◗', callback_data=f'point#{query.from_user.id}'),
-            InlineKeyboardButton('◖ ᴀʙᴏᴜᴛ ◗', callback_data=f'about')
+            InlineKeyboardButton('• ʏᴏᴜʀ ᴘᴏɪɴᴛs •', callback_data=f'point#{query.from_user.id}'),
+            InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data=f'about')
         ],
         [
             InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='earn')
