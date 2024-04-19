@@ -44,7 +44,7 @@ async def group_search(client, message):
                         [ InlineKeyboardButton('🔍 ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ 🔎' , url=link)]
                         ]))
                     await asyncio.sleep(300)
-                    await msg.delete()
+                    return await msg.delete()
                 else: return     
     if settings["auto_filter"]:
         if not user_id:
