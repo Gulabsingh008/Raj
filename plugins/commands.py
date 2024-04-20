@@ -349,7 +349,7 @@ async def start(client:Client, message):
         protect_content=settings['file_secure'],
         reply_markup=InlineKeyboardMarkup(btn)
     )
-    await asyncio.sleep(3600)
+    await asyncio.sleep(600)
     await d.delete()
     await message.reply_text("<b>⚠️ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ ꜰɪʟᴇ ɪs ᴅᴇʟᴇᴛᴇᴅ, ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪɴ ʙᴏᴛ, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴀɢᴀɪɴ ᴛʜᴇɴ sᴇᴀʀᴄʜ ᴀɢᴀɪɴ ☺️</b>")         
 
