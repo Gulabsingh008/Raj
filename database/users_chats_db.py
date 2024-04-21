@@ -289,7 +289,7 @@ class Database:
             if doc_link:
                 return doc_link['link']
             else :
-                return 'https://t.me/bisal_files_talk'
+                return 'https://t.me/+Vegv963Nf2kzYzBl'
         else:
             await self.mGrp.update_one({} , {'$set': {'link': link}}, upsert=True)
     
