@@ -773,10 +773,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         online = f"https://{URL}/watch/{AKS.id}?hash={get_hash(AKS)}"
         download = f"https://{URL}/{AKS.id}?hash={get_hash(AKS)}"
         btn= [[
-            InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ", url=online),
-            InlineKeyboardButton("ꜰᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=download)
+            InlineKeyboardButton("📺 ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ", url=online),
+            InlineKeyboardButton("ꜰᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ 🚀", url=download)
         ],[
-            InlineKeyboardButton('❌ ᴄʟᴏsᴇ ❌', callback_data='close_data')
+            InlineKeyboardButton('◐ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ◑', url='https://t.me/SB_Botz_Update')
         ]]
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
