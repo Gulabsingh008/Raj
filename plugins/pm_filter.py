@@ -765,11 +765,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data.startswith("stream"):
         user_id = query.from_user.id
-        if not await db.has_premium_access(user_id):
-            d=await query.message.reply("<b>💔 ᴛʜɪꜱ ғᴇᴀᴛᴜʀᴇ ɪꜱ ᴏɴʟʏ ғᴏʀ ʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.\n\nɪғ ʏᴏᴜ ᴡᴀɴᴛ ʙᴏᴛ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ᴛʜᴇɴ ꜱᴇɴᴅ /plan</b>")
-            await asyncio.sleep(10)
-            await d.delete()
-            return
+        
         file_id = query.data.split('#', 1)[1]
         AKS = await client.send_cached_media(
             chat_id=BIN_CHANNEL,
