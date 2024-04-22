@@ -24,7 +24,7 @@ LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001651812610'))
 MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/SB_Movie_Group')
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001917260095').split()]
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://raj94626:sona779988@cluster0.q3zewwo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://raj94626:sona779988@cluster0.cghvkxn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://raj94626:sona779988@cluster0.mwj5at3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'cluster0')
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1001963473990'))
