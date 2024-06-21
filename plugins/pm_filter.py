@@ -823,11 +823,36 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📸 ᴛ-ɢʀᴀᴘʜ', callback_data='telegraph'),
             InlineKeyboardButton('🆎️ ғᴏɴᴛ', callback_data='font')    
         ],[
+         InlineKeyboardButton('fsub', callback_data='fsub'), 
+         InlineKeyboardButton('disclaimer', callback_data='disclaimer')  
+        ]],
+        [[
 	    InlineKeyboardButton('⋞ ʜᴏᴍᴇ', callback_data='start')
-        ]] 
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(                     
             text=script.HELP_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+
+    elif query.data == "disclaimer":
+        buttons = [[
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='features'),
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.DISCLAIMER_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "fsub":
+        buttons = [[
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='features'),
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.FSUB_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
