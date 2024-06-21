@@ -825,10 +825,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
          InlineKeyboardButton('fsub', callback_data='fsub'), 
          InlineKeyboardButton('disclaimer', callback_data='disclaimer')  
-        ]],
-        [[
+        ],
+        [
 	    InlineKeyboardButton('⋞ ʜᴏᴍᴇ', callback_data='start')
-        ]]
+        ]],
+        
+        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(                     
             text=script.HELP_TXT,
