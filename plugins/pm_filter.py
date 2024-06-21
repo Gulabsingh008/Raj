@@ -819,17 +819,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )      
     elif query.data == "features":
-        buttons = [[
-            InlineKeyboardButton('📸 ᴛ-ɢʀᴀᴘʜ', callback_data='telegraph'),
-            InlineKeyboardButton('🆎️ ғᴏɴᴛ', callback_data='font')    
-        ],[
-         InlineKeyboardButton('fsub', callback_data='fsub'), 
-         InlineKeyboardButton('disclaimer', callback_data='disclaimer')  
-        ],
-        [
-	    InlineKeyboardButton('⋞ ʜᴏᴍᴇ', callback_data='start')
-        ]],
-        
+        buttons = [
+            [
+                InlineKeyboardButton('📸 ᴛ-ɢʀᴀᴘʜ', callback_data='telegraph'),
+                InlineKeyboardButton('🆎️ ғᴏɴᴛ', callback_data='font')    
+            ],
+            [
+                InlineKeyboardButton('fsub', callback_data='fsub'), 
+                InlineKeyboardButton('disclaimer', callback_data='disclaimer')  
+            ],
+            [
+                InlineKeyboardButton('⋞ ʜᴏᴍᴇ', callback_data='start')
+            ]
+        ]
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(                     
@@ -837,6 +839,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+
 
     elif query.data == "disclaimer":
         buttons = [[
