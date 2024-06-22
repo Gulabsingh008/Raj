@@ -51,7 +51,6 @@ Size : {file_size}
 📆 ʏᴇᴀʀ - {release_date}
 ❗️ ʟᴀɴɢᴜᴀɢᴇ - {languages}
 
-ɴᴏᴛ - 𝟷𝟶 ʟᴀᴋʜs ғɪʟᴇ ᴀᴅᴅᴇᴅ ᴛʜɪs ʙᴏᴛ
 •─────•───────────•─────•
 
 💞 Regards @SB_Botz_Update
