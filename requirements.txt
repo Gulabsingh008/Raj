@@ -19,7 +19,7 @@ pyshorteners
 datetime
 pytz
 dnspython==2.3.0
-# aiohttp
+aiohttp
 python-math
 Pillow
 speedtest-cli
