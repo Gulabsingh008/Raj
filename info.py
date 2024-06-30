@@ -65,7 +65,7 @@ SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1001625752177'))
 request_channel = environ.get('REQUEST_CHANNEL', '-1001838363129')
 REQUEST_CHANNEL = int(request_channel) if request_channel and id_pattern.search(request_channel) else None
 UPI_PAY_LOGS = int(environ.get('UPI_PAY_LOGS', '-1002023751348'))
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002087439415'))
+
 # bot settings
 IS_PM_SEARCH = is_enabled('IS_PM_SEARCH', False)
 AUTO_FILTER = is_enabled('AUTO_FILTER', True)
