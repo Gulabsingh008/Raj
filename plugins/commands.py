@@ -137,9 +137,9 @@ async def m_grp(client, message):
         await msg.edit('checking ypur link..')
         url_pattern = r'^https?://(?:www\.)?\S+$'
         if re.match(url_pattern, link):
-            await msg.edit('hmm..link is valid..😚')
+            await msg.edit('hmm..link is valid..✔️')
             await db.get_set_mgrp(link)
-            await msg.edit('link is saved in my db..😚')
+            await msg.edit('link is saved in my db..♻️')
             await asyncio.sleep(5)
             await msg.delete()
             await message.delete()
@@ -227,14 +227,14 @@ async def start(client:Client, message):
                             InlineKeyboardButton('🎗️ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='premium'),
                             ],
                             [
-                            InlineKeyboardButton('🎁 ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ 🎁', callback_data=f'free_premium#{message.from_user.id}')
+                            InlineKeyboardButton('◖ ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ ◗', callback_data=f'free_premium#{message.from_user.id}')
                             ],
                             [
-                            InlineKeyboardButton('🎭 ʏᴏᴜʀ ᴘᴏɪɴᴛs ✨', callback_data=f'point#{message.from_user.id}'),
-                            InlineKeyboardButton('🫠 ᴀʙᴏᴜᴛ 🚩', callback_data='about')
+                            InlineKeyboardButton('◖ ʏᴏᴜʀ ᴘᴏɪɴᴛs ◗', callback_data=f'point#{message.from_user.id}'),
+                            InlineKeyboardButton('◖ ᴀʙᴏᴜᴛ ◗', callback_data='about')
                             ],
                             [
-                            InlineKeyboardButton('🤞🏻 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 🤡', callback_data='earn')
+                            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='earn')
                             ]]
                         reply_markup = InlineKeyboardMarkup(buttons)
                         await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -257,7 +257,7 @@ async def start(client:Client, message):
             InlineKeyboardButton('🎗️ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='premium'),
         ],
         [
-            InlineKeyboardButton('🎁 ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ 🎁', callback_data=f'free_premium#{message.from_user.id}')
+            InlineKeyboardButton('🎁 ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ ', callback_data=f'free_premium#{message.from_user.id}')
         ],
         [
             InlineKeyboardButton('🎭 ʏᴏᴜʀ ᴘᴏɪɴᴛs ✨', callback_data=f'point#{message.from_user.id}'),
