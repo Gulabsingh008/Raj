@@ -8,10 +8,11 @@ from info import STICKERS_IDS,PREMIUM_POINT,MAX_BTN, BIN_CHANNEL, USERNAME, URL,
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto, ChatPermissions
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid, ChatAdminRequired
-from utils import temp, get_settings, is_check_admin, get_status, get_hash, get_name, get_size, save_group_settings, is_req_subscribed, get_poster, get_status, get_readable_time
+from utils import temp, get_settings, is_check_admin, get_status, get_hash, get_name, get_size, save_group_settings, is_req_subscribed, get_poster, get_status, get_readable_time , imdb
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_search_results, get_bad_files, get_file_details
 import random
+from fuzzywuzzy import process
 lock = asyncio.Lock()
 from .helper.checkFsub import is_user_fsub
 BUTTONS = {}
@@ -24,8 +25,8 @@ async def pm_search(client, message):
         return 
     if IS_PM_SEARCH:
         if 'hindi' in message.text.lower() or 'tamil' in message.text.lower() or 'telugu' in message.text.lower() or 'malayalam' in message.text.lower() or 'kannada' in message.text.lower() or 'english' in message.text.lower() or 'gujarati' in message.text.lower(): 
-            return await auto_filter(client, message)
-        await auto_filter(client, message)
+            return await auto_filter(client, message , pm_mode = True)
+        await auto_filter(client, message , pm_mode = True)
     else:
         await message.reply_text("<b>ʜᴇʏ 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʟɪɴᴋ ʙᴇʟᴏᴡ \n👇👇\n\n🍿 @SB_Movie_Group\n🍿 @SB_Movie_Group</b>")
     
@@ -1240,22 +1241,58 @@ async def cb_handler(client: Client, query: CallbackQuery):
         link = f"https://telegram.me/{temp.U_NAME}?start=allfiles_{group_id}-{message_id}"
         await query.answer(url=link)
         return
-
-async def auto_filter(client, msg, spoll=False):
-    st = await msg.reply_sticker(sticker=random.choice(STICKERS_IDS))
+async def ai_spell_check(wrong_name):
+    async def search_movie(wrong_name):
+        search_results = imdb.search_movie(wrong_name)
+        movie_list = [movie['title'] for movie in search_results]
+        return movie_list
+    movie_list = await search_movie(wrong_name)
+    if not movie_list:
+        return
+    for _ in range(5):
+        closest_match = process.extractOne(wrong_name, movie_list)
+        if not closest_match or closest_match[1] <= 80:
+            return 
+        movie = closest_match[0]
+        files, offset, total_results = await get_search_results(movie)
+        if files:
+            return movie
+        movie_list.remove(movie)
+    return
+async def delSticker(sticker):
+    try:
+        await sticker.delete()
+    except:
+        pass
+async def auto_filter(client, msg, spoll=False , pm_mode = False):
+    st = ''
+    try:
+        st = await msg.reply_sticker(sticker=random.choice(STICKERS_IDS))
+    except:
+        pass
     if not spoll:
         message = msg
         search = message.text
         chat_id = message.chat.id
-        settings = await get_settings(chat_id)
+        settings = await get_settings(chat_id , pm_mode=pm_mode)
         files, offset, total_results = await get_search_results(search)
         if not files:
             if settings["spell_check"]:
-                await st.delete()
+                await delSticker(st)
+                ai_sts = await msg.reply_text('<b>Ai is Cheking For Your Spelling. Please Wait.</b>')
+                is_misspelled = await ai_spell_check(search)
+                if is_misspelled:
+                    await ai_sts.edit(f'<b>Ai Suggested <code>{is_misspelled}</code>\nSo Im Searching for <code>{is_misspelled}</code></b>')
+                    await asyncio.sleep(2)
+                    msg.text = is_misspelled
+                    await ai_sts.delete()
+                    return await auto_filter(client, msg)
+                await delSticker(st)
+                await ai_sts.delete()
                 return await advantage_spell_chok(msg)
             return
     else:
-        settings = await get_settings(msg.message.chat.id)
+        settings = await get_settings(msg.message.chat.id , pm_mode=pm_mode)
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     req = message.from_user.id if message.from_user else 0
@@ -1263,60 +1300,52 @@ async def auto_filter(client, msg, spoll=False):
     batch_ids = files
     temp.FILES_ID[f"{message.chat.id}-{message.id}"] = batch_ids
     batch_link = f"batchfiles#{message.chat.id}#{message.id}#{message.from_user.id}"
-    pre = 'filep' if settings['file_secure'] else 'file'
     temp.CHAT[message.from_user.id] = message.chat.id
-    settings = await get_settings(message.chat.id)
+    settings = await get_settings(message.chat.id , pm_mode=pm_mode)
     del_msg = f"\n\n<b>⚠️ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀꜰᴛᴇʀ <code>{get_readable_time(DELETE_TIME)}</code> ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs</b>" if settings["auto_delete"] else ''
     links = ""
     if settings["link"]:
         btn = []
         for file_num, file in enumerate(files, start=1):
-            links += f"""<b>\n\n♻️ <a href=https://t.me/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))} ({file_num})</a></b>"""
+            links += f"""<b>\n\n♻️ <a href=https://t.me/{temp.U_NAME}?start={"pm_mode_" if pm_mode else ''}file_{ADMINS[0] if pm_mode else message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))} ({file_num})</a></b>"""
     else:
         btn = [[InlineKeyboardButton(text=f"🔗 {get_size(file.file_size)}≽ {get_name(file.file_name)}", url=f'https://telegram.dog/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}'),]
                for file in files
               ]
     if offset != "":
-        if total_results >= 3:
+        if total_results >= MAX_BTN:
             btn.insert(0,[
-                InlineKeyboardButton("🔰 ᴄʜᴏᴏsᴇ ʟᴀɴɢᴜᴀɢᴇ 🔰", callback_data=f"languages#{key}#{offset}#{req}"),
+                InlineKeyboardButton("🎭 ᴄʜᴏᴏsᴇ ʟᴀɴɢᴜᴀɢᴇ ✨", callback_data=f"languages#{key}#{offset}#{req}"),
                 ])
             btn.insert(1, [
-                InlineKeyboardButton("◖ ǫᴜᴀʟɪᴛʏ ◗", callback_data=f"qualities#{key}#{offset}#{req}"),
-                InlineKeyboardButton("◖ ʏᴇᴀʀ ◗", callback_data=f"years#{key}#{offset}#{req}"),
+                InlineKeyboardButton("✨ ǫᴜᴀʟɪᴛʏ 🤡", callback_data=f"qualities#{key}#{offset}#{req}"),
+                InlineKeyboardButton("🚩 ʏᴇᴀʀ ⌛", callback_data=f"years#{key}#{offset}#{req}"),
             ])
             btn.insert(2, [
-                InlineKeyboardButton("◖ ᴄʜᴏᴏsᴇ sᴇᴀsᴏɴ ◗", callback_data=f"seasons#{key}#{offset}#{req}")
+                InlineKeyboardButton("✨ ᴄʜᴏᴏsᴇ season🍿", callback_data=f"seasons#{key}#{offset}#{req}")
             ])
             btn.insert(3,[
-                InlineKeyboardButton("♨️ sᴇɴᴅ ᴀʟʟ ♨️", callback_data=batch_link),
+                InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ", callback_data=batch_link),
                 ])
         else:
             btn.insert(0,[
-        InlineKeyboardButton("🔰 ᴄʜᴏᴏsᴇ ʟᴀɴɢᴜᴀɢᴇ 🔰", callback_data=f"languages#{key}#{offset}#{req}"),
-        ])
-            btn.insert(1, [
-                InlineKeyboardButton("◖ ǫᴜᴀʟɪᴛʏ ◗", callback_data=f"qualities#{key}#{offset}#{req}"),
-                InlineKeyboardButton("◖ ʏᴇᴀʀ ◗", callback_data=f"years#{key}#{offset}#{req}"),
+                InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ", callback_data=batch_link),
             ])
-            btn.insert(2, [
-                InlineKeyboardButton("◖ ᴄʜᴏᴏsᴇ sᴇᴀsᴏɴ ◗", callback_data=f"seasons#{key}#{offset}#{req}")
+            btn.insert(1,[
+                InlineKeyboardButton("No More Pages", user_id=ADMINS[0])
             ])
     else:
-        #fix this later
-        if total_results >= 3:
-            btn.insert(0,[
-                InlineKeyboardButton("♨️ sᴇɴᴅ ᴀʟʟ ♨️", callback_data=batch_link),
-                InlineKeyboardButton("🎗️ ᴘʀᴇᴍɪᴜᴍ 🎗️", callback_data="premium")
+        btn.insert(0,[
+            InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ", callback_data=batch_link),
             ])
-        else:
-            btn.insert(0,[
-                InlineKeyboardButton("💰 ᴘʀᴇᴍɪᴜᴍ 💰", callback_data="premium")
-            ])
+
+        btn.insert(1,[
+            InlineKeyboardButton("No More Pages", user_id=ADMINS[0])
+        ])
                              
     if spoll:
         m = await msg.message.edit(f"<b><code>{search}</code> ɪs ꜰᴏᴜɴᴅ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ꜰᴏʀ ꜰɪʟᴇs 📫</b>")
-        await st.delete()
+        await delSticker(st)
         await asyncio.sleep(1.2)
         await m.delete()
 
@@ -1377,7 +1406,7 @@ async def auto_filter(client, msg, spoll=False):
         try:
             if settings['auto_delete']:
                 k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024] + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))
-                await st.delete()
+                await delSticker(st)
                 await asyncio.sleep(DELETE_TIME)
                 await k.delete()
                 try:
@@ -1391,7 +1420,7 @@ async def auto_filter(client, msg, spoll=False):
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             if settings["auto_delete"]:
                 k = await message.reply_photo(photo=poster, caption=cap[:1024] + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))
-                await st.delete()
+                await delSticker(st)
                 await asyncio.sleep(DELETE_TIME)
                 await k.delete()
                 try:
@@ -1403,7 +1432,11 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             print(e)
             if settings["auto_delete"]:
-                k = await message.reply_text(cap + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
+                await delSticker(st)
+                try:
+                    k = await message.reply_text(cap + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
+                except Exception as e:
+                    print("error", e)
                 await asyncio.sleep(DELETE_TIME)
                 await k.delete()
                 try:
@@ -1413,10 +1446,10 @@ async def auto_filter(client, msg, spoll=False):
             else:
                 await message.reply_text(cap + links + del_msg, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
     else:
-        k=await message.reply_text(text=cap + links + del_msg, disable_web_page_preview=True, parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn), reply_to_message_id=message.id)
-        await st.delete()
+        k = await message.reply_text(text=cap + links + del_msg, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML, reply_to_message_id=message.id)
+        await delSticker(st)
         if settings['auto_delete']:
-            await st.delete()
+            await delSticker(st)
             await asyncio.sleep(DELETE_TIME)
             await k.delete()
             try:
@@ -1432,7 +1465,6 @@ async def advantage_spell_chok(message):
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
         "", message.text, flags=re.IGNORECASE)
-    RQST = query.strip()
     query = query.strip() + " movie"
     try:
         movies = await get_poster(search, bulk=True)

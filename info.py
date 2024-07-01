@@ -49,6 +49,7 @@ SHORTENER_API3 = environ.get("SHORTENER_API3", "9d714f16fc0263df58858c2cc5b48759
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", ZIPLINKER)
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
+FILE_AUTO_DEL_TIMER = int(environ.get('FILE_AUTO_DEL_TIMER', '600'))
 
 # languages search
 LANGUAGES = ["hindi", "english", "telugu", "tamil", "kannada", "malayalam", "bengali", "marathi", "gujarati", "punjabi"]

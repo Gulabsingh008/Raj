@@ -1,17 +1,16 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, IS_VERIFY
+from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, IS_VERIFY , SETTINGS
 from imdb import Cinemagoer
 import asyncio
-import shortzy 
-from pyrogram.types import Message, InlineKeyboardButton
+from pyrogram.types import Message
 from pyrogram import enums
 import pytz
 import time
 import re
 import os 
 from shortzy import Shortzy
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from typing import Any
 from database.users_chats_db import db
 import requests
@@ -168,19 +167,22 @@ async def groups_broadcast(chat_id, message, is_pin):
         await db.delete_chat(chat_id)
         return "Error"
 
-async def get_settings(group_id):
-    settings = temp.SETTINGS.get(group_id)
-    if not settings:
-        settings = await db.get_settings(group_id)
-        temp.SETTINGS.update({group_id: settings})
-    return settings
+async def get_settings(group_id , pm_mode = False):
+    if pm_mode or len(str(group_id)) < 14:
+        return SETTINGS.copy()
+    else:
+        settings = temp.SETTINGS.get(group_id)
+        if not settings:
+            settings = await db.get_settings(group_id)
+            temp.SETTINGS.update({group_id: settings})
+    return settings 
     
 async def save_group_settings(group_id, key, value):
     current = await get_settings(group_id)
     current.update({key: value})
     temp.SETTINGS.update({group_id: current})
     await db.update_settings(group_id, current)
-    
+
 def get_size(size):
     units = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB"]
     size = float(size)
@@ -202,8 +204,11 @@ def list_to_str(k):
     else:
         return ', '.join(f'{elem}, ' for elem in k)
 
-async def get_shortlink(link, grp_id, is_second_shortener=False, is_third_shortener=False):
-    settings = await get_settings(grp_id)
+async def get_shortlink(link, grp_id, is_second_shortener=False, is_third_shortener=False , pm_mode=False):
+    if not pm_mode:
+        settings = await get_settings(grp_id)
+    else:
+        settings = SETTINGS
     if IS_VERIFY:
         if is_third_shortener:             
             api, site = settings['api_three'], settings['shortner_three']
