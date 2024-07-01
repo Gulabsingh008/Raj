@@ -4,7 +4,7 @@ from os import environ
 from Script import script
 from collections import defaultdict
 from pyrogram import Client
-
+import settings 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "y"]:
