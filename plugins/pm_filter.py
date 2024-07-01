@@ -12,6 +12,7 @@ from utils import temp, get_settings, is_check_admin, get_status, get_hash, get_
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_search_results, get_bad_files, get_file_details
 import random
+from fuzzywuzzy import process
 lock = asyncio.Lock()
 from .helper.checkFsub import is_user_fsub
 BUTTONS = {}
