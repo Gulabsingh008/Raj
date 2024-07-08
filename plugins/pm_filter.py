@@ -825,18 +825,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "features":
         buttons = [
             [
-                InlineKeyboardButton('📸 ᴛ-ɢʀᴀᴘʜ', callback_data='telegraph'),
-                InlineKeyboardButton('🆎️ ғᴏɴᴛ', callback_data='font')    
+                InlineKeyboardButton('• ʙᴏᴛ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='admincmd') 
+	    ],
+		InlineKeyboardButton('• ᴛ-ɢʀᴀᴘʜ •', callback_data='telegraph'),
+                InlineKeyboardButton('• ғᴏɴᴛ •', callback_data='font')    
             ],
             [
 		InlineKeyboardButton('• ᴜʀ ᴘᴏɪɴᴛs •', callback_data=f'point#{query.from_user.id}'), 
-		InlineKeyboardButton('• ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ •', callback_data=f'free_premium#{query.from_user.id}')
+		InlineKeyboardButton('• ᴄᴜsᴛᴏᴍ •', callback_data='custom')
 	    ],
             [
-                InlineKeyboardButton('🔏 ғsᴜʙ', callback_data='fsub'), 
-                InlineKeyboardButton('⚠️ ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disclaimer')  
+                InlineKeyboardButton('• ғsᴜʙ •', callback_data='fsub'), 
+                InlineKeyboardButton('• ᴅɪsᴄʟᴀɪᴍᴇʀ •', callback_data='disclaimer')  
             ],
             [
+	    ],
+	        InlineKeyboardButton('• ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ •', callback_data=f'free_premium#{query.from_user.id}')
+	    [
+	    ],
                 InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
             ]
         ]
