@@ -225,11 +225,11 @@ async def start(client:Client, message):
                                    InlineKeyboardButton(text="🛡", callback_data="group_info"),
                                    InlineKeyboardButton(text="💳", callback_data="about"),
                                    InlineKeyboardButton(text="💸", callback_data="earn"),
-                                   InlineKeyboardButton(text="🖥", callback_data="main"),
+                                   InlineKeyboardButton(text="🖥", callback_data="features"),
                                 ],[
                                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                                 ],[
-                                   InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='main'),
+                                   InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='features'),
                                    InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='earn')
                                 ],[
                                    InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
@@ -254,11 +254,11 @@ async def start(client:Client, message):
                     InlineKeyboardButton(text="🛡", callback_data="group_info"),
                     InlineKeyboardButton(text="💳", callback_data="about"),
                     InlineKeyboardButton(text="💸", callback_data="earn"),
-                    InlineKeyboardButton(text="🖥", callback_data="main"),
+                    InlineKeyboardButton(text="🖥", callback_data="features"),
                 ],[
                     InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='main'),
+                    InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='features'),
                     InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='earn')
                 ],[
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
@@ -308,11 +308,11 @@ async def start(client:Client, message):
                     InlineKeyboardButton(text="🛡", callback_data="group_info"),
                     InlineKeyboardButton(text="💳", callback_data="about"),
                     InlineKeyboardButton(text="💸", callback_data="earn"),
-                    InlineKeyboardButton(text="🖥", callback_data="main"),
+                    InlineKeyboardButton(text="🖥", callback_data="features"),
                 ],[
                     InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='main'),
+                    InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='features'),
                     InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='earn')
                 ],[
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
