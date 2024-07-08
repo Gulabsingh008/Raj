@@ -827,6 +827,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton('• ʙᴏᴛ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='admincmd') 
 	    ],
+	    [
 		InlineKeyboardButton('• ᴛ-ɢʀᴀᴘʜ •', callback_data='telegraph'),
                 InlineKeyboardButton('• ғᴏɴᴛ •', callback_data='font')    
             ],
@@ -837,12 +838,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton('• ғsᴜʙ •', callback_data='fsub'), 
                 InlineKeyboardButton('• ᴅɪsᴄʟᴀɪᴍᴇʀ •', callback_data='disclaimer')  
-            ],
-            [
 	    ],
-	        InlineKeyboardButton('• ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ •', callback_data=f'free_premium#{query.from_user.id}')
 	    [
+	        InlineKeyboardButton('• ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ •', callback_data=f'free_premium#{query.from_user.id}')
 	    ],
+            [
                 InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
             ]
         ]
