@@ -227,7 +227,7 @@ async def start(client:Client, message):
                                    InlineKeyboardButton(text="💸", callback_data="earn"),
                                    InlineKeyboardButton(text="🖥", callback_data="features"),
                                 ],[
-                                   InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                                   InlineKeyboardButton('✘ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ✘', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                                 ],[
                                    InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='features'),
                                    InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='earn')
@@ -235,8 +235,8 @@ async def start(client:Client, message):
                                    InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                                  ],[
-                                   InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url='https://t.me/SB_Botz_Update'),
-                                   InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/+Vegv963Nf2kzYzBl')
+                                   InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
+                                   
                                  ]]
                         reply_markup = InlineKeyboardMarkup(buttons)
                         await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -259,7 +259,7 @@ async def start(client:Client, message):
                     InlineKeyboardButton(text="💸", callback_data="earn"),
                     InlineKeyboardButton(text="🖥", callback_data="features"),
                 ],[
-                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('✘ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ✘', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='features'),
                     InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='earn')
@@ -267,8 +267,8 @@ async def start(client:Client, message):
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url='https://t.me/SB_Botz_Update'),
-                    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/+Vegv963Nf2kzYzBl')
+                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
+                    
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -316,7 +316,7 @@ async def start(client:Client, message):
                     InlineKeyboardButton(text="💸", callback_data="earn"),
                     InlineKeyboardButton(text="🖥", callback_data="features"),
                 ],[
-                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('✘ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ✘', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='features'),
                     InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='earn')
@@ -324,8 +324,8 @@ async def start(client:Client, message):
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url='https://t.me/SB_Botz_Update'),
-                    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/+Vegv963Nf2kzYzBl')
+                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
+                    
                    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
