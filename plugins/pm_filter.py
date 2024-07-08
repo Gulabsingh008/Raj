@@ -811,7 +811,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
-                  ]]
+                  ],[
+                    InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url='https://t.me/SB_Botz_Update'),
+                    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/+Vegv963Nf2kzYzBl')
+	           ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
