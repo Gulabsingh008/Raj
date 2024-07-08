@@ -798,21 +798,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
   
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ⇆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
-        ],[
-            InlineKeyboardButton('⚙ ꜰᴇᴀᴛᴜʀᴇs', callback_data='features'),
-            InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ 🎉', callback_data='premium'),
-        ],
-        [
-            InlineKeyboardButton('• ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ •', callback_data=f'free_premium#{query.from_user.id}')
-        ],
-        [
-            InlineKeyboardButton('• ʏᴏᴜʀ ᴘᴏɪɴᴛs •', callback_data=f'point#{query.from_user.id}'),
-            InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data=f'about')
-        ],
-        [
-            InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='earn')
-        ]]    
+                    InlineKeyboardButton(text="🏡", callback_data="start"),
+                    InlineKeyboardButton(text="🛡", callback_data="group_info"),
+                    InlineKeyboardButton(text="💳", callback_data="about"),
+                    InlineKeyboardButton(text="💸", callback_data="earn"),
+                    InlineKeyboardButton(text="🖥", callback_data="main"),
+                ],[
+                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],[
+                    InlineKeyboardButton('• ғᴇᴀᴛᴜʀᴇs •', callback_data='main'),
+                    InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='earn')
+                ],[
+                    InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
+                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
+                  ]]
+        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, get_status(), query.from_user.id),
@@ -826,11 +826,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('🆎️ ғᴏɴᴛ', callback_data='font')    
             ],
             [
+		InlineKeyboardButton('• ᴜʀ ᴘᴏɪɴᴛs •', callback_data=f'point#{query.from_user.id}'), 
+		InlineKeyboardButton('• ɢᴇᴛ ᴘʀᴇᴍɪᴜᴍ ғʀᴇᴇ •', callback_data=f'free_premium#{query.from_user.id}')
+	    ],
+            [
                 InlineKeyboardButton('🔏 ғsᴜʙ', callback_data='fsub'), 
                 InlineKeyboardButton('⚠️ ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disclaimer')  
             ],
             [
-                InlineKeyboardButton('⋞ ʜᴏᴍᴇ', callback_data='start')
+                InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
             ]
         ]
         
