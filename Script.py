@@ -31,11 +31,11 @@ class script(object):
 
 ɴᴏᴛᴇ - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋ ɪɴ ʙᴏᴛʜ ɢʀᴏᴜᴘs ᴀɴᴅ ʙᴏᴛ ᴘᴍ</b>"""
     ABOUT_TEXT = """<b>❍ ᴍʏ ɴᴀᴍᴇ : <a href="https://t.me/IMDbTG_bot">𝐈𝐦𝐝𝐛𝐅𝐢𝐥𝐞𝐬 𝐁𝐨𝐭 シ</a>
-❍ ᴄʀᴇᴀᴛᴏʀ : <a href="https://t.me/Your_Raj">𝚁𝚊𝚓 𝚅𝚎𝚛𝚖𝚊 ♧</a>
+❍ ᴍʏ ᴏɴᴡᴇʀ : <a href="https://t.me/Your_Raj">𝚁𝚊𝚓 𝚅𝚎𝚛𝚖𝚊 ♧</a>
 ❍ ʟɪʙʀᴀʀʏ : <a href="https://pyrogram.org/">ᴘʏʀᴏɢʀᴀᴍ</a>
 ❍ ʟᴀɴɢᴜᴀɢᴇ : <a href="https://www.python.org/">ᴘʏᴛʜᴏɴ</a>
 ❍ ᴅᴀᴛᴀʙᴀꜱᴇ : <a href="https://www.mongodb.com/">ᴍᴏɴɢᴏ ᴅʙ</a>
-❍ ʜᴏꜱᴛᴇᴅ ᴏɴ : <a href="https://t.me/SB_botz_Updaze">ᴋᴏʏᴇʙ</a>
+❍ ʜᴏꜱᴛᴇᴅ ᴏɴ : <a href="https://telegram.me/SB_botz_Updaze">ᴋᴏʏᴇʙ</a>
 ❍ ʙᴜɪʟᴅ ꜱᴛᴀᴛᴜꜱ : ᴠ2 [ᴀᴅᴠᴀɴᴄᴇ]
 
 ‣ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ғᴏʀ ɢᴇᴛᴛɪɴɢ ʙᴀsɪᴄ ʜᴇʟᴩ ᴀɴᴅ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴍᴇ.</b>"""
