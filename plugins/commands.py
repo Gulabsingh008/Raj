@@ -134,7 +134,7 @@ async def m_grp(client, message):
     msg = await message.reply("wait i'm checking..")
     try:
         link =  message.command[1]
-        await msg.edit('checking ypur link..')
+        await msg.edit('Checking Your Link..')
         url_pattern = r'^https?://(?:www\.)?\S+$'
         if re.match(url_pattern, link):
             await msg.edit('hmm..link is valid..✔️')
