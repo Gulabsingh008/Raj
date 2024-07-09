@@ -1,6 +1,6 @@
 import os
 class script(object):
-    CUSTOM_TEXT = """<b><i>😊 <u>ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅꜱ</u> 😊
+    CUSTOM_TXT = """<b><i>😊 <u>ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅꜱ</u> 😊
     
 /start - ᴄʜᴇᴄᴋ ɪ'ᴍ ᴀʟɪᴠᴇ ᴏʀ ɴᴏᴛ 😏 
 /set_shortner - ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ sʜᴏʀᴛᴇɴᴇʀ 🥇
