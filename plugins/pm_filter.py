@@ -825,7 +825,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "features":
         buttons = [
             [
-                InlineKeyboardButton('• ʙᴏᴛ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='admincmd') 
+                InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/SB_Botz_Update") 
 	    ],
 	    [
 		InlineKeyboardButton('• ᴛ-ɢʀᴀᴘʜ •', callback_data='telegraph'),
