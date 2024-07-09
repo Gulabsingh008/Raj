@@ -187,15 +187,15 @@ Yᴏᴜʀ <ul>ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴ</ul> ᴡɪʟʟ ʙᴇ ᴀᴄᴛɪᴠ
 
 2:- ᴍᴀᴋᴇ ᴛʜɪs <a href=https://t.me/{}</a> ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
 
-3:- ᴄʀᴇᴀᴛᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ ᴀɴʏ sʜᴏʀᴛɴᴇʀ ʟɪᴋᴇ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴜsᴇ ᴛʜɪs ʙᴇsᴛ sʜᴏʀᴛɴᴇʀ <a href=https://tnshort.net>ᴛɴʟɪɴᴋ</a>.
+3:- ᴄʀᴇᴀᴛᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ ᴀɴʏ sʜᴏʀᴛɴᴇʀ ʟɪᴋᴇ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴜsᴇ ᴛʜɪs ʙᴇsᴛ sʜᴏʀᴛɴᴇʀ <a href=https://ziplinker.net/ref/Raj6435>ᴢɪᴘʟɪɴᴋᴇʀ.ɴᴇᴛ</a>.
 
 4:- ᴛʜᴇɴ sᴇᴛ ʏᴏᴜʀ sʜᴏʀᴛɴᴇʀ ᴅᴇᴛᴀɪʟs ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ 👇
 
-<code>/set_shortner urlspay.in 06b24eb6bbb025713cd522fb3f696b6d5de11354</code>
+<code>/set_shortner Ziplinker.in 06b24eb6bbb025713cd522fb3f696b6d5de11354</code>
 
 <code>/set_shortner_2 moneykamalo.com e7beb3c8f756dfa15d0bec495abc65f58c0dfa95</code>
 
-<code>/set_shortner_3 instantearn.in 06b24eb6bbb025713cd522fb3f696b6d5de11354</code>
+<code>/set_shortner_3 onepage.in 06b24eb6bbb025713cd522fb3f696b6d5de11354</code>
 
 <code>/set_tutorial https://t.me/bots_up</code>
 
