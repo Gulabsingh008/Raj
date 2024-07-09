@@ -852,11 +852,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.HELP_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-        )
-
+	)
+	    
      elif query.data == "custom":
-          buttons = [[
-              InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='features'),
+        buttons = [[
+            InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='features'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
