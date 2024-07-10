@@ -274,6 +274,9 @@ async def start(client:Client, message):
                     
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        loading_sticker_message = await message.reply_sticker("CAACAgUAAxkBAAECEEBlLA-nYcsWmsNWgE8-xqIkriCWAgACJwEAAsiUZBTiPWKAkUSmmh4E")
+        await asyncio.sleep(2)
+        await loading_sticker_message.delete()
         await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
@@ -331,6 +334,9 @@ async def start(client:Client, message):
                     
                    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        loading_sticker_message = await message.reply_sticker("CAACAgUAAxkBAAECEEBlLA-nYcsWmsNWgE8-xqIkriCWAgACJwEAAsiUZBTiPWKAkUSmmh4E")
+        await asyncio.sleep(2)
+        await loading_sticker_message.delete()
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
