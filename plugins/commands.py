@@ -334,7 +334,7 @@ async def start(client:Client, message):
                     
                    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        loading_sticker_message = await message.reply_sticker("CAACAgUAAxkBAAECEEBlLA-nYcsWmsNWgE8-xqIkriCWAgACJwEAAsiUZBTiPWKAkUSmmh4E")
+        loading_sticker_message = await message.reply_sticker("CAACAgQAAxkBAAEL5SxmF9mKK92dq1YzDnZmK2CHGtLi8AAC1AIAAnJxFyVUIYkDHFAofDQE")
         await asyncio.sleep(2)
         await loading_sticker_message.delete()
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
