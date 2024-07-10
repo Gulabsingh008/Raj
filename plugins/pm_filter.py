@@ -864,6 +864,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+	    
     elif query.data == "disclaimer":
         buttons = [[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='features'),
@@ -874,6 +875,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    
+    elif query.data == "group_info":
+        buttons = [[
+            InlineKeyboardButton('♡ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ♡', url="https://t.me/SB_Movie_Group")
+       ],[
+            InlineKeyboardButton('•sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ •', url="https://t.me/+Vegv963Nf2kzYzBl"),
+            InlineKeyboardButton('•ʙᴏᴛs ᴜᴘᴅᴀᴛᴇs •', url="https://t.me/SB_Botz_Update")
+       ],[
+            InlineKeyboardButton('• sᴇʀɪᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/apnalink_serise"),
+            InlineKeyboardButton('• ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ•', url="https://t.me/MovieVillaTG")
+       ],[
+            InlineKeyboardButton('• ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ•', url="https://t.me/+HC5-Y0NyVI05ODA1")
+       ],[ 
+            InlineKeyboardButton('• ʙᴀᴄᴋ •', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CHANNELS.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+	)
+
     elif query.data == "fsub":
         buttons = [[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='features'),
