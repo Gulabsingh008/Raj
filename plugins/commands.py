@@ -238,7 +238,7 @@ async def start(client:Client, message):
                                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
                                    
                                  ]]
-                        loading_sticker_message = await message.reply_sticker("CAACAgIAAxkBAALmzGXSSt3ppnOsSl_spnAP8wHC26jpAAJEGQACCOHZSVKp6_XqghKoHgQ"),
+                        loading_sticker_message = await message.reply_sticker("CAACAgUAAxkBAAECEEBlLA-nYcsWmsNWgE8-xqIkriCWAgACJwEAAsiUZBTiPWKAkUSmmh4E")
                         await asyncio.sleep(2)
                         await loading_sticker_message.delete()
                         reply_markup = InlineKeyboardMarkup(buttons)
