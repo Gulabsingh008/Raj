@@ -122,7 +122,7 @@ User - {}"""
 
     FILE_CAPTION = """<b>• {file_name}
 
-• ᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/">sʙ ʙᴏʏᴢ ᴜᴘᴅᴀᴛᴇ</a></b>
+• ᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/sb_botz_update">sʙ ʙᴏʏᴢ ᴜᴘᴅᴀᴛᴇ</a></b>
 
 <i>ᴘʟᴇᴀsᴇ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪs ꜰɪʟᴇs ᴛᴏ ᴛʜᴇ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇ ᴀɴᴅ ᴄʟᴏsᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ</i>"""
     
