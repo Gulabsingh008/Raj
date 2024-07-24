@@ -33,7 +33,7 @@ START_IMG = environ.get('START_IMG', 'https://graph.org/file/82e2895b4740905b054
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1001764238165'))
 URL = environ.get('URL', 'sb-file-stream-598aab65b298.herokuapp.com')
-ZIPLINKER = 'ziplinker.net'
+OMEGALINKS = 'omegalinks.in'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
 # verify system vars
@@ -41,12 +41,12 @@ IS_VERIFY = is_enabled('IS_VERIFY', True)
 LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002023751348'))
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/SB_Botz_Update/98")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
-SHORTENER_API = environ.get("SHORTENER_API", "9d714f16fc0263df58858c2cc5b487598ba01b1b")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", ZIPLINKER)
-SHORTENER_API2 = environ.get("SHORTENER_API2", "f9846e927b6a58071abfee056356f165f6e71d9f")
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", ZIPLINKER)
-SHORTENER_API3 = environ.get("SHORTENER_API3", "5b54b1af6eb539c7f2fcb030fb6e163bd9785789")
-SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", ZIPLINKER)
+SHORTENER_API = environ.get("SHORTENER_API", "651a3be83904f861a882e9417c6e25f857857802")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", OMEGALINKS)
+SHORTENER_API2 = environ.get("SHORTENER_API2", "651a3be83904f861a882e9417c6e25f857857802")
+SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", OMEGALINKS)
+SHORTENER_API3 = environ.get("SHORTENER_API3", "651a3be83904f861a882e9417c6e25f857857802")
+SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", OMEGALINKS)
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
 FILE_AUTO_DEL_TIMER = int(environ.get('FILE_AUTO_DEL_TIMER', '600'))
