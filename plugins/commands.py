@@ -13,18 +13,12 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, get_bad_files, unpack_new_file_id
 from database.users_chats_db import db
 from info import UPI_PAY_LOGS, ADMINS, THREE_VERIFY_GAP, LOG_CHANNEL, FILE_AUTO_DEL_TIMER, VERIFY_IMG, IS_VERIFY, FILE_CAPTION, AUTH_CHANNEL, SHORTENER_WEBSITE, SHORTENER_API, SHORTENER_WEBSITE2, SHORTENER_API2, LOG_API_CHANNEL, TWO_VERIFY_GAP, QR_CODE, DELETE_TIME
-from utils import get_settings,get_seconds, save_group_settings, is_req_subscribed, get_size, get_shortlink, is_check_admin, get_status, temp, get_readable_time
+from utils import check_is_shortlink, get_settings,get_seconds, save_group_settings, is_req_subscribed, get_size, get_shortlink, is_check_admin, get_status, temp, get_readable_time
 import re
 import base64
-from shortzy import Shortzy
 from info import *
 import traceback
 logger = logging.getLogger(__name__)
-
-def check_is_shortlink(url, api, link):
-    shortzy = Shortzy(api_key=api, base_site=url)
-    link = await shortzy.convert(link)
-    return link
 
 @Client.on_message(filters.command("fsub"))
 async def force_subscribe(client, message):
@@ -760,7 +754,7 @@ async def set_shortner(client, message):
     URL = command_parts[1]
     API = command_parts[2]   
     try:
-        short_link = check_is_shortlink(URL, API, f"https://t.me/{temp.U_NAME}")   
+        short_link = await check_is_shortlink(URL, API, f"https://t.me/{temp.U_NAME}")   
         await save_group_settings(chat_id, 'shortner', URL)
         await save_group_settings(chat_id, 'api', API)    
         reply_message = f"✅ Successfully added your shortener\nSite - {URL}\nAPI - {API}"
