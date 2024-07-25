@@ -16,9 +16,15 @@ from info import UPI_PAY_LOGS, ADMINS, THREE_VERIFY_GAP, LOG_CHANNEL, FILE_AUTO_
 from utils import get_settings,get_seconds, save_group_settings, is_req_subscribed, get_size, get_shortlink, is_check_admin, get_status, temp, get_readable_time
 import re
 import base64
+from shortzy import Shortzy
 from info import *
 import traceback
 logger = logging.getLogger(__name__)
+
+def check_is_shortlink(url, api, link):
+    shortzy = Shortzy(api_key=api, base_site=url)
+    link = await shortzy.convert(link)
+    return link
 
 @Client.on_message(filters.command("fsub"))
 async def force_subscribe(client, message):
@@ -740,39 +746,34 @@ async def save_tutorial(client, message):
     await message.reply_text(f"<b>Successfully changed tutorial for {title} to</b>\n\n{tutorial}", disable_web_page_preview=True)
     
 @Client.on_message(filters.command('set_shortner'))
-async def set_shortner(c, m):
-    grp_id = m.chat.id
-    title = m.chat.title
-    if not await is_check_admin(c, grp_id, m.from_user.id):
-        return await m.reply_text('<b>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ</b>')        
-    if len(m.text.split()) == 1:
-        await m.reply("<b>Use this command like this - \n\n`/set_shortner tnshort.net 06b24eb6bbb025713cd522fb3f696b6d5de11354`</b>")
-        return        
-    sts = await m.reply("<b>♻️ ᴄʜᴇᴄᴋɪɴɢ...</b>")
-    await asyncio.sleep(1.2)
-    await sts.delete()
-    chat_type = m.chat.type
-    if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        return await m.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ...</b>")
+async def set_shortner(client, message):
+    chat_id = message.chat.id
+    chat_title = message.chat.title
+    user_id = message.from_user.id   
+    if not await is_check_admin(client, chat_id, user_id):
+        return await message.reply_text('You are not an admin in this group.')    
+    command_parts = message.text.split()
+    if len(command_parts) < 3:
+        return await message.reply('Use this command like this:\n\n`/set_shortner tnshort.net 06b24eb6bbb025713cd522fb3f696b6d5de11354`')   
+    if message.chat.type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        return await message.reply_text('Use this command in a group...')   
+    URL = command_parts[1]
+    API = command_parts[2]   
     try:
-        URL = m.command[1]
-        API = m.command[2]
-        resp = requests.get(f'https://{URL}/api?api={API}&url=https://telegram.dog/Aksbackup').json()
-        if resp['status'] == 'success':
-            SHORT_LINK = resp['shortenedUrl']
-        await save_group_settings(grp_id, 'shortner', URL)
-        await save_group_settings(grp_id, 'api', API)
-        await m.reply_text(f"<b><u>✓ sᴜᴄᴄᴇssꜰᴜʟʟʏ ʏᴏᴜʀ sʜᴏʀᴛɴᴇʀ ɪs ᴀᴅᴅᴇᴅ</u>\n\nᴅᴇᴍᴏ - {SHORT_LINK}\n\nsɪᴛᴇ - `{URL}`\n\nᴀᴘɪ - `{API}`</b>", quote=True)
-        user_id = m.from_user.id
-        user_info = f"@{m.from_user.username}" if m.from_user.username else f"{m.from_user.mention}"
-        link = (await c.get_chat(m.chat.id)).invite_link
-        grp_link = f"[{m.chat.title}]({link})"
-        log_message = f"#New_Shortner_Set_For_1st_Verify\n\nName - {user_info}\nId - `{user_id}`\n\nDomain name - {URL}\nApi - `{API}`\nGroup link - {grp_link}"
-        await c.send_message(LOG_API_CHANNEL, log_message, disable_web_page_preview=True)
-    except Exception as e:
-        await save_group_settings(grp_id, 'shortner', SHORTENER_WEBSITE)
-        await save_group_settings(grp_id, 'api', SHORTENER_API)
-        await m.reply_text(f"<b><u>💢 ᴇʀʀᴏʀ ᴏᴄᴄᴏᴜʀᴇᴅ!!</u>\n\nᴀᴜᴛᴏ ᴀᴅᴅᴇᴅ ʙᴏᴛ ᴏᴡɴᴇʀ ᴅᴇꜰᴜʟᴛ sʜᴏʀᴛɴᴇʀ\n\nɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ᴛʜᴇɴ ᴜsᴇ ᴄᴏʀʀᴇᴄᴛ ꜰᴏʀᴍᴀᴛ ᴏʀ ᴀᴅᴅ ᴠᴀʟɪᴅ sʜᴏʀᴛʟɪɴᴋ ᴅᴏᴍᴀɪɴ ɴᴀᴍᴇ & ᴀᴘɪ\n\nʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴄᴏɴᴛᴀᴄᴛ ᴏᴜʀ <a href=https://t.me/+Vegv963Nf2kzYzBl>sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ</a> ꜰᴏʀ sᴏʟᴠᴇ ᴛʜɪs ɪssᴜᴇ...\n\nʟɪᴋᴇ -\n\n`/set_shortner mdiskshortner.link e7beb3c8f756dfa15d0bec495abc65f58c0dfa95`\n\n💔 ᴇʀʀᴏʀ - <code>{e}</code></b>", quote=True)
+        short_link = check_is_shortlink(URL, API, f"https://t.me/{temp.U_NAME}")   
+        await save_group_settings(chat_id, 'shortner', URL)
+        await save_group_settings(chat_id, 'api', API)    
+        reply_message = f"✅ Successfully added your shortener\nSite - {URL}\nAPI - {API}"
+        await message.reply_text(reply_message, quote=True)    
+        user_info = f"@{message.from_user.username}" if message.from_user.username else message.from_user.mention
+        group_link = (await client.get_chat(chat_id)).invite_link     
+        log_message = f"#New_Shortner_Set_For_1st_Verify\nName - {user_info}\nID - {user_id}\nDomain name - {URL}\nAPI - {API}\nGroup link - [{chat_title}]({group_link}) {chat_id}"
+        await client.send_message(LOG_CHANNEL, log_message, disable_web_page_preview=True)  
+    except Exception as error:
+        await save_group_settings(chat_id, 'shortner', SHORTENER_WEBSITE)
+        await save_group_settings(chat_id, 'api', SHORTENER_API)      
+        error_message = f"<b><u>💢 Error occurred!!</u> Auto added bot owner default shortener. If you want to change, use the correct format or add a valid shortlink domain name & API. You can also contact our <a href='https://t.me/aks_bot_support'>support group</a> for solving this issue. Example: `/set_shortner mdiskshortner.link e7beb3c8f756dfa15d0bec495abc65f58c0dfa95` 💔 Error - <code>{error}</code></b>"
+        await message.reply_text(error_message, quote=True)
 
 @Client.on_message(filters.command('set_shortner_2'))
 async def set_shortner_2(c, m):
