@@ -224,6 +224,11 @@ async def get_shortlink(link, grp_id, is_second_shortener=False, is_third_shorte
             link = await shortzy.get_quick_link(link)
     return link
 
+async def check_is_shortlink(url, api, link):
+    shortzy = Shortzy(api_key=api, base_site=url)
+    link = await shortzy.convert(link)
+    return link
+
 def get_file_id(message: "Message") -> Any:
     media_types = (
         "audio",
@@ -300,9 +305,4 @@ def get_readable_time(seconds):
             period_value, seconds = divmod(seconds, period_seconds)
             result += f'{int(period_value)}{period_name}'
     return result
-
-await def check_is_shortlink(url, api, link):
-    shortzy = Shortzy(api_key=api, base_site=url)
-    link = await shortzy.convert(link)
-    return link
 
