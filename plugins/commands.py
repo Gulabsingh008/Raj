@@ -741,33 +741,43 @@ async def save_tutorial(client, message):
     
 @Client.on_message(filters.command('set_shortner'))
 async def set_shortner(client, message):
-    chat_id = message.chat.id
+    group_id = message.chat.id
     chat_title = message.chat.title
-    user_id = message.from_user.id   
-    if not await is_check_admin(client, chat_id, user_id):
-        return await message.reply_text('You are not an admin in this group.')    
-    command_parts = message.text.split()
-    if len(command_parts) < 3:
-        return await message.reply('Use this command like this:\n\n`/set_shortner tnshort.net 06b24eb6bbb025713cd522fb3f696b6d5de11354`')   
+    user_id = message.from_user.id
+    
     if message.chat.type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        return await message.reply_text('Use this command in a group...')   
-    URL = command_parts[1]
-    API = command_parts[2]   
+        return await message.reply_text('Use this command in a group...')
+        
+    if not await is_check_admin(client, group_id, user_id):
+        return await message.reply_text('You are not an admin in this group.')    
     try:
-        short_link = await check_is_shortlink(URL, API, f"https://t.me/{temp.U_NAME}")   
-        await save_group_settings(chat_id, 'shortner', URL)
-        await save_group_settings(chat_id, 'api', API)    
-        reply_message = f"✅ Successfully added your shortener\nSite - {URL}\nAPI - {API}"
-        await message.reply_text(reply_message, quote=True)    
-        user_info = f"@{message.from_user.username}" if message.from_user.username else message.from_user.mention
-        group_link = (await client.get_chat(chat_id)).invite_link     
-        log_message = f"#New_Shortner_Set_For_1st_Verify\nName - {user_info}\nID - {user_id}\nDomain name - {URL}\nAPI - {API}\nGroup link - [{chat_title}]({group_link}) {chat_id}"
-        await client.send_message(LOG_CHANNEL, log_message, disable_web_page_preview=True)  
-    except Exception as error:
-        await save_group_settings(chat_id, 'shortner', SHORTENER_WEBSITE)
-        await save_group_settings(chat_id, 'api', SHORTENER_API)      
-        error_message = f"<b><u>💢 Error occurred!!</u> Auto added bot owner default shortener. If you want to change, use the correct format or add a valid shortlink domain name & API. You can also contact our <a href='https://t.me/aks_bot_support'>support group</a> for solving this issue. Example: `/set_shortner mdiskshortner.link e7beb3c8f756dfa15d0bec495abc65f58c0dfa95` 💔 Error - <code>{error}</code></b>"
-        await message.reply_text(error_message, quote=True)
+        _, url, api = message.text.split(" ", 2)
+    except:
+        return await message.reply('Use this command like this:\n\n`/set_shortner tnshort.net 06b24eb6bbb025713cd522fb3f696b6d5de11354`')
+    try:
+        await check_is_shortlink(url, api, f"https://t.me/{temp.U_NAME}")
+    except Exception as e:
+        await message.reply_text(f"<b><u>💢 Error occurred!!</u>\n\n<code>{e}</code></b>")
+        return
+        
+    await save_group_settings(group_id, 'shortner', url)
+    await save_group_settings(group_id, 'api', api)
+    await message.reply_text(f"✅ Successfully added your shortener\nSite - {url}\nAPI - {api}")
+    group_info = await client.get_chat(group_id)
+    group_name = group_info.title
+    if group_info.username:
+        if group_info.username.startswith('@'):
+            group_username = group_info.username
+        else:
+            group_username = f"{await client.export_chat_invite_link(group_id)}"
+    else:
+        group_username = f"{await client.export_chat_invite_link(group_id)}"
+    count = await client.get_chat_members_count(group_id)
+    user_info = await client.get_chat_member(group_id, message.from_user.id)
+    user_full_name = user_info.user.full_name
+    user_username = user_info.user.username if user_info.user.username else "No username"
+    aks = f"1st Shortlink API and URL set.\n\nGroup - {group_name} `{group_id}`\nLink - {group_username}\nMembers - `{count}`\nSet by - {user_full_name} @{user_username}\n\nShortner URL - `{url}`\nAPI - `{api}`"
+    await client.send_message(LOG_CHANNEL, aks, disable_web_page_preview=True)
 
 @Client.on_message(filters.command('set_shortner_2'))
 async def set_shortner_2(c, m):
