@@ -711,19 +711,31 @@ async def delete_files(bot, message):
 async def save_caption(client, message):
     grp_id = message.chat.id
     title = message.chat.title
+    
+    # Check if the user is an admin
     if not await is_check_admin(client, grp_id, message.from_user.id):
-        return await message.reply_text('<b>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ</b>')
-    chat_type = message.chat.type
-    if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        return await message.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ...</b>")
+        return await message.reply_text('<b>You are not an admin in this group.</b>')
+    
+    # Check if the chat is a group or supergroup
+    if message.chat.type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        return await message.reply_text("<b>This command can only be used in groups or supergroups.</b>")
+    
+    # Try to extract the caption from the command
     try:
         caption = message.text.split(" ", 1)[1]
-    except:
-        return await message.reply_text("Command Incomplete!")
-    await save_group_settings(grp_id, 'caption', caption)
-    await message.reply_text(f"Successfully changed caption for {title} to\n\n{caption}", disable_web_page_preview=True) 
+    except IndexError:
+        return await message.reply_text("<b>Command Incomplete! Please provide a caption\n\n Example - 📁{file_name}\n🧭{file_size}\n\join Update Channel\n🥰 @SB_botz_Update.</b>")
     
-@Client.on_message(filters.command('set_tutorial'))
+    # Save the caption in group settings
+    await save_group_settings(grp_id, 'caption', caption)
+    
+    # Send confirmation message
+    await message.reply_text(
+        f"<b>Successfully changed caption for '{title}' to:</b>\n\n{caption}",
+        disable_web_page_preview=True
+    )
+
+@Client.on_message(filters.command('tutorial'))
 async def save_tutorial(client, message):
     grp_id = message.chat.id
     title = message.chat.title
