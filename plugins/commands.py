@@ -724,7 +724,7 @@ async def save_caption(client, message):
     try:
         caption = message.text.split(" ", 1)[1]
     except IndexError:
-        return await message.reply_text("<b>Command Incomplete! Please provide a caption\n\n Example - 📁{file_name}\n🧭{file_size}\n\join Update Channel\n🥰 @SB_botz_Update.</b>")
+        return await message.reply_text("<b>Command Incomplete! Please provide a caption\n\n Example - 📁 {file_name}\n 🧭{file_size}\n\njoin Update Channel\n🥰 @SB_botz_Update.</b>")
     
     # Save the caption in group settings
     await save_group_settings(grp_id, 'caption', caption)
