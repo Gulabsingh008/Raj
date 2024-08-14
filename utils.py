@@ -1,6 +1,6 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, IS_VERIFY , SETTINGS
+from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, IS_VERIFY , SETTINGS, IGNORE_WORDS
 from imdb import Cinemagoer
 import asyncio
 from pyrogram.types import Message
@@ -306,3 +306,8 @@ def get_readable_time(seconds):
             result += f'{int(period_value)}{period_name}'
     return result
 
+async def replace_words(string):
+    ignorewords = IGNORE_WORDS
+    pattern = r'\b(?:{})\b'.format('|'.join(map(re.escape, ignorewords)))
+    formatted = re.sub(pattern, '', string)
+    return formatted.replace("-", " ")
