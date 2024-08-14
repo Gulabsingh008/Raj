@@ -1317,7 +1317,7 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
         pass
     if not spoll:
         message = msg
-        search = message.text
+        search = await replace_words(message.text)
         chat_id = message.chat.id
         settings = await get_settings(chat_id , pm_mode=pm_mode)
         files, offset, total_results = await get_search_results(search)
