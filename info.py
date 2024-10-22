@@ -32,7 +32,7 @@ QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/d7c9c7906833797aa0244.j
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/82e2895b4740905b054b9.gif')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1001764238165'))
-URL = environ.get('URL', 'sb-botz-upade-a5075c685344.herokuapp.com')
+URL = environ.get('URL', 'doubtful-octavia-botslearning-960cdd7c.koyeb.app')
 ONEPAGEYAM = 'onepageyam.com'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
