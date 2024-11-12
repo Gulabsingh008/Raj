@@ -97,7 +97,7 @@ async def get_bad_files(query, file_type=None, offset=0, filter=False):
     elif ' ' not in query:
         raw_pattern = r'(\b|[\.\+\-_])' + query + r'(\b|[\.\+\-_])'
     else:
-        raw_pattern = query.replace(' ', r'.*[\s\.\+\-_]')
+        raw_pattern = query.replace(' ', r'.*[\s\.\+\-_()\[\]]')
     try:
         regex = re.compile(raw_pattern, flags=re.IGNORECASE)
     except:
