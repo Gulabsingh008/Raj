@@ -114,7 +114,7 @@ TIPS = """
 
 ☆ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ
 
-❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @
+❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sʙ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ 🤞
 """
 
 @Client.on_callback_query(filters.regex("tips_alert"))
