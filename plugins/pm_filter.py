@@ -114,8 +114,7 @@ TIPS = """
 
 ☆ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ
 
-❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sʙ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ 
-"""
+❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sʙ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ """
 
 @Client.on_callback_query(filters.regex("tips_alert"))
 async def on_alert_button(bot, query):
