@@ -119,7 +119,7 @@ TIPS = """
 
 @Client.on_callback_query(filters.regex("tips_alert"))
 async def on_alert_button(bot, query):
-    await callback_query.answer(        
+    await query.answer(        
         TIPS, show_alert=True
     )
 	
