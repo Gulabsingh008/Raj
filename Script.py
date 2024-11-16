@@ -9,7 +9,9 @@ class script(object):
 /set_time_2 - sᴇᴛ ʏᴏᴜʀ 𝟸ɴᴅ ᴠᴇʀɪғʏ ᴛɪᴍᴇ ⏰ 
 /set_time_3 - sᴇᴛ ʏᴏᴜʀ 𝟹ʀᴅ ᴠᴇʀɪғʏ ᴛɪᴍᴇ 🕰️ 
 /set_log_channel - sᴇᴛ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ 🧑‍💻
-/set_tutorial - sᴇᴛ sʜᴏʀᴛᴇɴᴇʀ ᴠɪᴅᴇᴏ ᴛᴜᴛᴏʀɪᴀʟ 🎞️
+/tutorial - sᴇᴛ sʜᴏʀᴛᴇɴᴇʀ ᴠɪᴅᴇᴏ ᴛᴜᴛᴏʀɪᴀʟ 1️⃣
+/tutorial2 - sᴇᴛ sʜᴏʀᴛᴇɴᴇʀ ᴠɪᴅᴇᴏ ᴛᴜᴛᴏʀɪᴀʟ 2⃣
+/tutorial3 - sᴇᴛ sʜᴏʀᴛᴇɴᴇʀ ᴠɪᴅᴇᴏ ᴛᴜᴛᴏʀɪᴀʟ 3⃣
 /set_caption - sᴇᴛ ғɪʟᴇ ᴄᴀᴘᴛɪᴏɴ 📝
 /plan - ᴄʜᴇᴄᴋ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀsʜɪᴘ ᴘʀɪᴄᴇ ♨️
 /myplan - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘʟᴀɴ ᴠᴀʟɪᴅɪᴛʏ ⌛ 
@@ -103,7 +105,7 @@ class script(object):
 
 ☆ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ
 
-❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @
+❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sʙ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ
 """
 
 
@@ -219,7 +221,11 @@ Yᴏᴜʀ <ul>ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴ</ul> ᴡɪʟʟ ʙᴇ ᴀᴄᴛɪᴠ
 
 <code>/set_shortner_3 onepage.in 06b24eb6bbb025713cd522fb3f696b6d5de11354</code>
 
-<code>/set_tutorial https://t.me/bots_up</code>
+<code>/tutorial https://t.me/bots_up</code>
+
+<code>/tutorial2 https://t.me/bots_up</code>
+
+<code>/tutorial3 https://t.me/bots_up</code>
 
 5:- ᴀᴅᴅ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ & ᴍᴀᴋᴇ sᴜʀᴇ ʙᴏᴛ ɪs ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ 👇
 
