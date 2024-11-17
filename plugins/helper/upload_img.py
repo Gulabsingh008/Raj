@@ -12,12 +12,6 @@ from info import *
     )
 )
 async def imgbb_upload(_, msg: Message):
-    if tg.FSUB:
-        client = _
-        message = msg
-        is_participant = await get_fsub(client, message)
-        if not is_participant:
-            return
     replied = msg.reply_to_message
     if not replied:
         await msg.reply_text("𝚁𝙴𝙿𝙻𝚈 𝚃𝙾 𝙰 𝙿𝙷𝙾𝚃𝙾 𝙾𝚁 𝚅𝙸𝙳𝙴𝙾 𝚄𝙽𝙳𝙴𝚁 𝟻𝙼𝙱.")
@@ -100,12 +94,6 @@ def upload_image_requests(image_path):
     )
 )
 async def upload_cmd(_, msg: Message):
-    if tg.FSUB:
-        client = _
-        message = msg
-        is_participant = await get_fsub(client, message)
-        if not is_participant:
-            return
     replied = msg.reply_to_message
     if not replied:
         await msg.reply_text("Reply to a photo or video under 5 MB.")
