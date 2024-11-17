@@ -2,7 +2,7 @@ import requests
 import os, asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery 
-from config import Config as tg
+from info import info as tg
 from plugins.fsub import get_fsub
 
 @Client.on_message(
