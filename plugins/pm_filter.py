@@ -635,7 +635,7 @@ async def lang_search(client: Client, query: CallbackQuery):
         InlineKeyboardButton("◖ sᴇᴀsᴏɴ ◗", callback_data=f"seasons#{key}#{offset}#{req}")
     ])
     btn.insert(2, [
-        InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", callback_data=tips_alert),
+        InlineKeyboardButton("⇈ ꜱᴇʟᴇᴄᴛ ᴏᴘᴛɪᴏɴꜱ ʜᴇʀᴇ ⇈", callback_data="tips_alert"),
     ])
     if n_offset== '':
         btn.append(
