@@ -32,7 +32,7 @@ async def imgbb_upload(_, msg: Message):
     try:
         with open(media, 'rb') as file:
             response = requests.post(
-                f"https://api.imgbb.com/1/upload?key={tg.IMGBB_API_KEY}",
+                f"https://api.imgbb.com/1/upload?key={IMGBB_API_KEY}",
                 files={"image": file}
             )
             response_data = response.json()
