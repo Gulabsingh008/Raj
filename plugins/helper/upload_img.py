@@ -2,8 +2,6 @@ import requests
 import os, asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery 
-from info import info as tg
-from plugins.fsub import get_fsub
 from info import IBB_API
 
 @Client.on_message(
