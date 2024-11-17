@@ -2,7 +2,7 @@ import requests
 import os, asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery 
-from info import 
+from info import * 
 
 @Client.on_message(
     filters.command('imgbb')
