@@ -30,7 +30,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'cluster0')
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1001963473990'))
 QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/d7c9c7906833797aa0244.jpg')
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/82e2895b4740905b054b9.gif')
-IMGBB_API_KEY = env.get("IMGBB_API_KEY", "843ceb81c0fe834bd1db328e68c32a87")
+IMGBB_API_KEY = environ.get('IMGBB_API_KEY', '843ceb81c0fe834bd1db328e68c32a87')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1001764238165'))
 URL = environ.get('URL', 'doubtful-octavia-botslearning-960cdd7c.koyeb.app')
