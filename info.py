@@ -39,9 +39,9 @@ STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQe
 # verify system vars
 IS_VERIFY = is_enabled('IS_VERIFY', True)
 LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002023751348'))
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/SB_Botz_Update/98")
-TUTORIAL2 = environ.get("TUTORIAL2", "https://t.me/SB_Botz_Update/98")
-TUTORIAL3 = environ.get("TUTORIAL3", "https://t.me/SB_Botz_Update/98")
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/SB_Botz_Update/104")
+TUTORIAL2 = environ.get("TUTORIAL2", "https://t.me/SB_Botz_Update/104")
+TUTORIAL3 = environ.get("TUTORIAL3", "https://t.me/SB_Botz_Update/104")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
 SHORTENER_API = environ.get("SHORTENER_API", "23b723c2db0550b4a9dab4b9f5c04d3dddab6534")
 SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", ONEPAGEYAM)
