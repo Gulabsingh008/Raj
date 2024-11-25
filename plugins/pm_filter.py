@@ -850,7 +850,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],
             [
 		InlineKeyboardButton('• ᴜʀ ᴘᴏɪɴᴛs •', callback_data=f'point#{query.from_user.id}'), 
-		InlineKeyboardButton('• ᴄᴜsᴛᴏᴍ •', callback_data='custom')
+		InlineKeyboardButton('• ɢʀᴏᴜᴘ ᴀᴅᴍɪɴ ᴄᴍᴅ •', callback_data='custom')
 	    ],
             [
                 InlineKeyboardButton('• ғsᴜʙ •', callback_data='fsub'), 
