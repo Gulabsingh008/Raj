@@ -23,31 +23,31 @@ USERNAME = environ.get('USERNAME', "https://telegram.me/Af_mhakal")
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002030723564'))
 MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/+Xz6Art-q091lODg1')
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002194109031').split()]
-DATABASE_URI = environ.get('DATABASE_URI', "0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://fplonq:CXBRdJeEAdtKbV6y@cluster0.q7dfa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://2o8jsj:IHSJ8FC65WChypWS@cluster0.5tmub.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'cluster0')
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1001963473990'))
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002030723564'))
 QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/d7c9c7906833797aa0244.jpg')
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/82e2895b4740905b054b9.gif')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL','0'))
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002030723564'))
 URL = environ.get('URL', 'doubtful-octavia-botslearning-960cdd7c.koyeb.app')
-ONEPAGEYAM = 'onepageyam.com'
+ONEPAGEYAM = 'krownlinks.com'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
 # verify system vars
 IS_VERIFY = is_enabled('IS_VERIFY', True)
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002023751348'))
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/SB_Botz_Update/104")
-TUTORIAL2 = environ.get("TUTORIAL2", "https://t.me/SB_Botz_Update/104")
-TUTORIAL3 = environ.get("TUTORIAL3", "https://t.me/SB_Botz_Update/104")
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002030723564'))
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/howto_open_short_link/12")
+TUTORIAL2 = environ.get("TUTORIAL2", "https://t.me/howto_open_short_link/12")
+TUTORIAL3 = environ.get("TUTORIAL3", "https://t.me/howto_open_short_link/12")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
-SHORTENER_API = environ.get("SHORTENER_API", "23b723c2db0550b4a9dab4b9f5c04d3dddab6534")
+SHORTENER_API = environ.get("SHORTENER_API", "4dbeb3373153a8396dd23d2e9da53c8f24f4b449")
 SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", ONEPAGEYAM)
-SHORTENER_API2 = environ.get("SHORTENER_API2", "23b723c2db0550b4a9dab4b9f5c04d3dddab6534")
+SHORTENER_API2 = environ.get("SHORTENER_API2", "4dbeb3373153a8396dd23d2e9da53c8f24f4b449")
 SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", ONEPAGEYAM)
-SHORTENER_API3 = environ.get("SHORTENER_API3", "23b723c2db0550b4a9dab4b9f5c04d3dddab6534")
+SHORTENER_API3 = environ.get("SHORTENER_API3", "4dbeb3373153a8396dd23d2e9da53c8f24f4b449")
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", ONEPAGEYAM)
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "14400"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "14400"))
@@ -62,12 +62,12 @@ REF_PREMIUM = 30
 PREMIUM_POINT = 1500
 auth_channel = environ.get('AUTH_CHANNEL', '')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1001625752177'))
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '0'))
 
 # hastags request features
-request_channel = environ.get('REQUEST_CHANNEL', '-1001838363129')
+request_channel = environ.get('REQUEST_CHANNEL', '0')
 REQUEST_CHANNEL = int(request_channel) if request_channel and id_pattern.search(request_channel) else None
-UPI_PAY_LOGS = int(environ.get('UPI_PAY_LOGS', '-1002023751348'))
+UPI_PAY_LOGS = int(environ.get('UPI_PAY_LOGS', '-1002030723564'))
 
 # bot settings
 IGNORE_WORDS = (list(os.environ.get("IGNORE_WORDS").split(",")) if os.environ.get("IGNORE_WORDS") else [])
