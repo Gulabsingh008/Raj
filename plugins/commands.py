@@ -304,7 +304,7 @@ async def start(client:Client, message):
                                    InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                                  ],[
-                                   InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
+                                   InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/+OiKmB79YlMJmNTJl'),
                                    
                                  ]]
                         loading_sticker_message = await message.reply_sticker("CAACAgUAAxkBAAECEEBlLA-nYcsWmsNWgE8-xqIkriCWAgACJwEAAsiUZBTiPWKAkUSmmh4E")
@@ -339,7 +339,7 @@ async def start(client:Client, message):
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
+                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/+OiKmB79YlMJmNTJl'),
                     
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -399,7 +399,7 @@ async def start(client:Client, message):
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
+                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/+OiKmB79YlMJmNTJl'),
                     
                    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -797,7 +797,7 @@ async def save_caption(client, message):
     try:
         caption = message.text.split(" ", 1)[1]
     except IndexError:
-        return await message.reply_text("<b>Command Incomplete! Please provide a caption\n\n ᴇxᴀᴍᴘʟᴇ - 📁 ғɪʟᴇ ɴᴀᴍᴇ {file_name}\n 🧭{file_size}\n\n◼️ 𝙅𝙤𝙞𝙣 𝙐𝙥𝙙𝙖𝙩𝙚 𝘾𝙝𝙖𝙣𝙣𝙚𝙡\n@SB_botz_Update</b>")
+        return await message.reply_text("<b>Command Incomplete! Please provide a caption\n\n ᴇxᴀᴍᴘʟᴇ - 📁 ғɪʟᴇ ɴᴀᴍᴇ {file_name}\n 🧭{file_size}\n\n◼️ 𝙅𝙤𝙞𝙣 𝙐𝙥𝙙𝙖𝙩𝙚 𝘾𝙝𝙖𝙣𝙣𝙚𝙡\n<a href="https://t.me/+OiKmB79YlMJmNTJl">𝙐𝙥𝙙𝙖𝙩𝙚 𝘾𝙝𝙖𝙣𝙣𝙚𝙡</a></b>")
     
     # Save the caption in group settings
     await save_group_settings(grp_id, 'caption', caption)
@@ -820,7 +820,7 @@ async def save_tutorial(client, message):
     try:
         tutorial = message.text.split(" ", 1)[1]
     except:
-        return await message.reply_text("<b>Command Incomplete!!\n\nuse like this -</b>\n\n<code>/set_caption 📁 ғɪʟᴇ ɴᴀᴍᴇ {file_name} ◼️𝙅𝙤𝙞𝙣 𝙐𝙥𝙙𝙖𝙩𝙚 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 https://t.me/SB_Botz_Update</code>")    
+        return await message.reply_text("<b>Command Incomplete!!\n\nuse like this -</b>\n\n<code>/set_caption 📁 ғɪʟᴇ ɴᴀᴍᴇ {file_name} ◼️𝙅𝙤𝙞𝙣 𝙐𝙥𝙙𝙖𝙩𝙚 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 :; <a href="https://t.me/+OiKmB79YlMJmNTJl">𝙐𝙥𝙙𝙖𝙩𝙚 𝘾𝙝𝙖𝙣𝙣𝙚𝙡</a></code>")    
     await save_group_settings(grp_id, 'tutorial', tutorial)
     await message.reply_text(f"<b>Successfully changed tutorial for {title} to</b>\n\n{tutorial}", disable_web_page_preview=True)
     
@@ -1021,7 +1021,7 @@ async def set_shortner_3(c, m):
     try:
         URL = m.command[1]
         API = m.command[2]
-        resp = requests.get(f'https://{URL}/api?api={API}&url=https://telegram.dog/Sb_botz_update').json()
+        resp = requests.get(f'https://{URL}/api?api={API}&url=https://telegram.dog/af_cinemas').json()
         if resp['status'] == 'success':
             SHORT_LINK = resp['shortenedUrl']
         await save_group_settings(grp_id, 'shortner_three', URL)
