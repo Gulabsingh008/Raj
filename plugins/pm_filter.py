@@ -28,7 +28,7 @@ async def pm_search(client, message):
             return await auto_filter(client, message , pm_mode = True)
         await auto_filter(client, message , pm_mode = True)
     else:
-        await message.reply_text("<b>ʜᴇʏ 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʟɪɴᴋ ʙᴇʟᴏᴡ \n👇👇\n\n🍿 @SB_Movie_Group\n🍿 @SB_Movie_Group</b>")
+        await message.reply_text("<b>ʜᴇʏ 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʟɪɴᴋ ʙᴇʟᴏᴡ \n👇👇\n\n🍿 https://t.me/+Xz6Art-q091lODg1\n🍿 https://t.me/+Xz6Art-q091lODg1</b>")
     
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def group_search(client, message):
@@ -45,7 +45,7 @@ async def group_search(client, message):
                 if total != 0:
                     link = await db.get_set_mgrp()
                     msg = await message.reply_text(script.SUPPORT_GRP_MOVIE_TEXT.format(message.from_user.mention() , total) ,             reply_markup=InlineKeyboardMarkup([
-                        [ InlineKeyboardButton('🔍 ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ 🔎' , url='https://t.me/SB_Movie_Group')]
+                        [ InlineKeyboardButton('🔍 ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ 🔎' , url='https://t.me/+Xz6Art-q091lODg1')]
                         ]))
                     await asyncio.sleep(300)
                     return await msg.delete()
@@ -114,7 +114,7 @@ TIPS = """
 
 ☆ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ
 
-❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sʙ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ """
+❣ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀғ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ """
 
 @Client.on_callback_query(filters.regex("tips_alert"))
 async def on_alert_button(bot, query):
@@ -797,7 +797,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("📺 ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ", url=online),
             InlineKeyboardButton("ꜰᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ 🚀", url=download)
         ],[
-            InlineKeyboardButton('◐ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ◑', url='https://t.me/SB_Botz_Update')
+            InlineKeyboardButton('◐ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ◑', url='https://t.me/+OiKmB79YlMJmNTJl')
         ]]
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
@@ -829,7 +829,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/SB_Botz_Update'),
+                    InlineKeyboardButton('❍ ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ❍', url='https://t.me/+OiKmB79YlMJmNTJl'),
                     
 	           ]]
         
@@ -842,7 +842,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "features":
         buttons = [
             [
-                InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/SB_Botz_Update") 
+                InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/+OiKmB79YlMJmNTJl") 
 	    ],
 	    [
 		InlineKeyboardButton('• ᴛ-ɢʀᴀᴘʜ •', callback_data='telegraph'),
@@ -895,10 +895,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "group_info":
         buttons = [[
-            InlineKeyboardButton('♡ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ♡', url="https://t.me/SB_Movie_Group")
+            InlineKeyboardButton('♡ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ♡', url="https://t.me/+Xz6Art-q091lODg1")
        ],[
-            InlineKeyboardButton('•sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ •', url="https://t.me/+Vegv963Nf2kzYzBl"),
-            InlineKeyboardButton('•ʙᴏᴛs ᴜᴘᴅᴀᴛᴇs •', url="https://t.me/SB_Botz_Update")
+            InlineKeyboardButton('•sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ •', url="https://t.me/af_support_chat"),
+            InlineKeyboardButton('•ʙᴏᴛs ᴜᴘᴅᴀᴛᴇs •', url="https://t.me/+OiKmB79YlMJmNTJl")
        ],[
             InlineKeyboardButton('• sᴇʀɪᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/apnalink_serise"),
             InlineKeyboardButton('• ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ•', url="https://t.me/MovieVillaTG")
