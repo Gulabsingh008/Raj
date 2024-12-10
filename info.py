@@ -15,23 +15,23 @@ def is_enabled(value, default):
         return default
 
 #main variables
-API_ID = int(environ.get('API_ID', '27924747'))
-API_HASH = environ.get('API_HASH', 'ce0f307805e68df9a18e1eac53048610')
-BOT_TOKEN = environ.get('BOT_TOKEN', '6068495523:AAGphvZlGy8bFXI8KSOYHoqPPNV-rBgjlu8')
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1393092521').split()]
-USERNAME = environ.get('USERNAME', "https://telegram.me/Your_Raj")
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001651812610'))
-MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/SB_Movie_Group')
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001917260095').split()]
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://raj94626:imdb2ndbot123@cluster0.qwr1l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://raj94626:imdbbisalbot@cluster0.dfairxs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+API_ID = int(environ.get('API_ID', '24519654'))
+API_HASH = environ.get('API_HASH', '1ccea9c29a420df6a6622383fbd83bcd')
+BOT_TOKEN = environ.get('BOT_TOKEN', '7778538687:AAEkghhb5pBmTpuix_Vhj5WofeBA6qH5dAk')
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1114789110').split()]
+USERNAME = environ.get('USERNAME', "https://telegram.me/Af_mhakal")
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002030723564'))
+MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/+Xz6Art-q091lODg1')
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002194109031').split()]
+DATABASE_URI = environ.get('DATABASE_URI', "0")
+DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://2o8jsj:IHSJ8FC65WChypWS@cluster0.5tmub.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'cluster0')
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1001963473990'))
 QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/d7c9c7906833797aa0244.jpg')
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/82e2895b4740905b054b9.gif')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1001764238165'))
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL','0'))
 URL = environ.get('URL', 'doubtful-octavia-botslearning-960cdd7c.koyeb.app')
 ONEPAGEYAM = 'onepageyam.com'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
