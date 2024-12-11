@@ -31,8 +31,8 @@ LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002030723564'))
 QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/d7c9c7906833797aa0244.jpg')
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/82e2895b4740905b054b9.gif')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002030723564'))
-URL = environ.get('URL', 'doubtful-octavia-botslearning-960cdd7c.koyeb.app')
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002051166250'))
+URL = environ.get('URL', 'efficient-carlye-myfilestream-c9938a22.koyeb.app')
 ONEPAGEYAM = 'krownlinks.com'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
