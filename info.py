@@ -62,7 +62,7 @@ REF_PREMIUM = 30
 PREMIUM_POINT = 1500
 auth_channel = environ.get('AUTH_CHANNEL', '-1002281015574')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '0'))
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002235094272'))
 
 # hastags request features
 request_channel = environ.get('REQUEST_CHANNEL', '-1002281015574')
