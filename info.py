@@ -32,7 +32,7 @@ QR_CODE = environ.get('QR_CODE', 'https://graph.org/file/d7c9c7906833797aa0244.j
 START_IMG = environ.get('START_IMG', 'https://graph.org/file/82e2895b4740905b054b9.gif')
 #this vars is for when heroku or koyeb acc get banned, then change this vars as your file to link bot name
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002030723564'))
-URL = environ.get('URL', 'witty-alberta-vonex-7b8d27a6.koyeb.app')
+URL = environ.get('URL', 'elated-kangaroo-vonex-2126a845.koyeb.app')
 ONEPAGEYAM = 'krownlinks.com'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
