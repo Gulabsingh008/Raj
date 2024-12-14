@@ -37,7 +37,7 @@ ONEPAGEYAM = 'krownlinks.com'
 STICKERS_IDS = ('CAACAgQAAxkBAAEK99dlfC7LDqnuwtGRkIoacot_dGC4zQACbg8AAuHqsVDaMQeY6CcRojME').split()
 
 # verify system vars
-IS_VERIFY = is_enabled('IS_VERIFY', True)
+IS_VERIFY = is_enabled('IS_VERIFY', False)
 LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002030723564'))
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/howto_open_short_link/12")
 TUTORIAL2 = environ.get("TUTORIAL2", "https://t.me/howto_open_short_link/12")
