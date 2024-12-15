@@ -1093,7 +1093,7 @@ async def verifyoff(client, message):
         title = message.chat.title
     else:
         return
-    if not await is_check_admin(client, grp_id, message.from_user.id):
+    if not await is_check_admin(client, grpid, message.from_user.id):
         return await message.reply_text('<b>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ</b>')
     await save_group_settings(grpid, 'is_verify', False)
     return await message.reply_text("✓ ᴠᴇʀɪꜰʏ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅɪꜱᴀʙʟᴇᴅ.")
@@ -1111,7 +1111,7 @@ async def verifyon(client, message):
         title = message.chat.title
     else:
         return
-    if not await is_check_admin(client, grp_id, message.from_user.id):
+    if not await is_check_admin(client, grpid, message.from_user.id):
         return await message.reply_text('<b>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ</b>')
     await save_group_settings(grpid, 'is_verify', True)
     return await message.reply_text("✗ ᴠᴇʀɪꜰʏ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ.")
