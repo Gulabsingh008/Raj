@@ -1081,7 +1081,7 @@ async def set_time_3(client, message):
 
 
 @Client.on_message(filters.command("verifyoff"))
-async def verifyoff(bot, message):
+async def verifyoff(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply("<b>ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ...</b>")
@@ -1099,7 +1099,7 @@ async def verifyoff(bot, message):
     return await message.reply_text("✓ ᴠᴇʀɪꜰʏ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅɪꜱᴀʙʟᴇᴅ.")
     
 @Client.on_message(filters.command("verifyon"))
-async def verifyon(bot, message):
+async def verifyon(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply("<b>ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ...</b>")
